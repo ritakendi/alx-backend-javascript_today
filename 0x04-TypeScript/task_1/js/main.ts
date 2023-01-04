@@ -30,3 +30,15 @@ class Teacher {
     // Add any other attribute to the object
     [key: string]: any;
 }
+
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
+const director: Directors = {
+    _firstName: 'Jane',
+    _lastName: 'Doe',
+    fullTimeEmployee: true,
+    location: 'San Francisco',
+    numberOfReports: 10
+};
