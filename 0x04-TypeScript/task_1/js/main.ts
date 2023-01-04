@@ -42,3 +42,35 @@ const director: Directors = {
     location: 'San Francisco',
     numberOfReports: 10
 };
+
+function printTeacher(firstName: string, lastName: string): string {
+    return `${firstName[0]}. ${lastName}`;
+}
+
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+
+// students class
+
+interface StudentConstructor {
+    new(firstName: string, lastName: string): Student;
+}
+
+interface Student {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class StudentClass implements Student {
+    constructor(private firstName: string, private lastName: string) { }
+
+    workOnHomework(): string {
+        return 'Currently working';
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
